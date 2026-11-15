@@ -1,0 +1,13 @@
+requests
+python-dotenv
+pandas
+pydantic
+fastapi
+uvicorn[standard]
+sqlalchemy
+pyarrow
+matplotlib
+plotly
+tldextract
+apscheduler
+httpx2

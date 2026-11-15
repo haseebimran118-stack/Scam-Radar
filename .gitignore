@@ -1,0 +1,46 @@
+Python virtual environment
+
+venv/
+.venv/
+
+Environment variables and secrets
+
+.env
+.env.*
+!.env.example
+
+Python cache
+
+__pycache__/
+*.py[cod]
+
+Database files
+
+*.db
+*.sqlite
+*.sqlite3
+
+Log files
+
+*.log
+
+Jupyter
+
+.ipynb_checkpoints/
+
+Generated data
+
+data/raw/*
+data/processed/*
+data/rejected/*
+
+Node.js
+
+node_modules/
+.next/
+dist/
+
+System files
+
+.DS_Store
+Thumbs.db
