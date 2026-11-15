@@ -11,3 +11,4 @@ plotly
 tldextract
 apscheduler
 httpx2
+psycopg[binary]
