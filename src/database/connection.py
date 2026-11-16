@@ -1,3 +1,4 @@
+
 import os
 from pathlib import Path
 
@@ -10,10 +11,17 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 load_dotenv(PROJECT_ROOT / ".env")
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    f"sqlite:///{PROJECT_ROOT / 'data' / 'scam_radar.db'}"
-)
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    if os.getenv("VERCEL"):
+        raise RuntimeError(
+            "DATABASE_URL is missing in Vercel environment variables."
+        )
+
+    DATABASE_URL = (
+        f"sqlite:///{PROJECT_ROOT / 'data' / 'scam_radar.db'}"
+    )
 
 if DATABASE_URL.startswith("sqlite"):
     db_path = PROJECT_ROOT / "data" / "scam_radar.db"
@@ -36,7 +44,6 @@ Base = declarative_base()
 
 def get_db():
     db = SessionLocal()
-
     try:
         yield db
     finally:
