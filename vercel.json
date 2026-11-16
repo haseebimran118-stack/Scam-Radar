@@ -4,13 +4,7 @@
     "app": {
       "root": ".",
       "framework": "fastapi",
-      "entrypoint": "index.py",
-      "rewrites": [
-        {
-          "source": "/api/:path(.*)?",
-          "destination": "/:path"
-        }
-      ]
+      "entrypoint": "index:app"
     },
     "frontend": {
       "root": "frontend-app",
