@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 
@@ -31,7 +31,7 @@ import {
   Cell,
 } from "recharts";
 
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "/api";
 const CHART_COLORS = [
   "#22d3ee",
   "#818cf8",
@@ -871,7 +871,7 @@ export default function Home() {
           {activePage === "Database" && renderDatabase()}
 
           <footer className="mt-10 text-center text-xs text-slate-500">
-            Scam Radar © 2026 — Malicious URL Intelligence Platform
+            Scam Radar Â© 2026 â€” Malicious URL Intelligence Platform
           </footer>
         </section>
       </div>

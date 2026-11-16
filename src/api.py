@@ -194,7 +194,7 @@ def dashboard(db: Session = Depends(get_db)):
             "sources_connected": len(source_names),
             "weekly_activity": weekly_activity,
             "top_threats": top_threats,
-            "database": "SQLite",
+            "database": db.bind.dialect.name,
             "status": "healthy"
         }
 
